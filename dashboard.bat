@@ -1,15 +1,10 @@
 
 @echo off
-cd /d C:\Users\alexa\Downloads\gestao_financeira_ml_corrigido
+cd /d "%~dp0"
 
 echo ========================
-echo Atualizando dados...
+echo Atualizando dados e iniciando o dashboard...
 echo ========================
 python main.py
-
-echo ========================
-echo Iniciando o dashboard...
-echo ========================
-streamlit run dashboard_financeiro.py
 
 pause

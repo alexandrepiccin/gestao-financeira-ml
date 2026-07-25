@@ -1,0 +1,6 @@
+# Relatórios gerados automaticamente a cada execução (main.py / exportar_para_excel_timestamp.py)
+relatorio_financeiro_[0-9]*.xlsx
+
+# Cache do Python
+__pycache__/
+*.pyc

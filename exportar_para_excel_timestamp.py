@@ -1,10 +1,14 @@
 
 import pandas as pd
 import os
+import sys
 from datetime import datetime
 from scripts.importar_extrato import importar_extratos
 from scripts.categorizar_ml import categorizar_transacoes_ml
 from scripts.analise import resumo_por_categoria, saldo_mensal
+
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 # Importar e classificar
 df = importar_extratos()

@@ -1,9 +1,13 @@
 
 import os
+import sys
 import pandas as pd
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
+
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 # Criar pasta modelo se não existir
 os.makedirs("modelo", exist_ok=True)

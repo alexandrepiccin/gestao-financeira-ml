@@ -2,7 +2,11 @@
 import subprocess
 import glob
 import os
+import sys
 from pathlib import Path
+
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 # Caminho do diretório do projeto
 projeto_path = Path(__file__).parent.resolve()

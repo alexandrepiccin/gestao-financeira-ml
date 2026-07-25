@@ -1,9 +1,13 @@
 
 import pandas as pd
 import os
+import sys
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
+
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 # 1. Atualizar categorias_treinamento_exemplo.csv
 nome_excel = "relatorio_financeiro_corrigido.xlsx"

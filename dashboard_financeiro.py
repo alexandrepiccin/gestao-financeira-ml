@@ -45,7 +45,10 @@ else:
 st.sidebar.header("🎛 Filtros")
 categorias = st.sidebar.multiselect("Filtrar por categoria", df["categoria"].dropna().unique(), default=df["categoria"].dropna().unique())
 meses = st.sidebar.multiselect("Filtrar por mês", df["ano_mes"].dropna().unique(), default=df["ano_mes"].dropna().unique())
-df_filtros = df[df["categoria"].isin(categorias) & df["ano_mes"].isin(meses)]
+
+bancos = st.sidebar.multiselect("Filtrar por banco", df["banco"].dropna().unique(), default=df["banco"].dropna().unique())
+df_filtros = df[df["categoria"].isin(categorias) & df["ano_mes"].isin(meses) & df["banco"].isin(bancos)]
+
 
 # ===============================
 # MÉTRICAS

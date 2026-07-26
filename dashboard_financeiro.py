@@ -81,10 +81,22 @@ bloco_saldo = st.container()
 bloco_categoria = st.container()
 bloco_tabela = st.container()
 
+# Lê o clique mais recente no gráfico de categoria (se houver) antes de
+# montar a tabela, que é desenhada acima dele no layout.
+categoria_clicada = None
+estado_grafico_categoria = st.session_state.get("grafico_categoria")
+if estado_grafico_categoria and estado_grafico_categoria.selection.points:
+    categoria_clicada = estado_grafico_categoria.selection.points[0].get("x")
+
+df_tabela = df_filtros[df_filtros["categoria"] == categoria_clicada] if categoria_clicada else df_filtros
+
 with bloco_tabela:
     st.markdown("### 📃 Tabela Detalhada")
-    st.caption("Clique numa linha para filtrar os gráficos acima pela mesma descrição. Clique novamente para limpar.")
-    tabela = df_filtros.sort_values("data", ascending=False).reset_index(drop=True)
+    legenda_tabela = "Clique numa linha para filtrar os gráficos acima pela mesma descrição. Clique novamente para limpar."
+    if categoria_clicada:
+        legenda_tabela += f" Filtrado pela categoria selecionada no gráfico: **{categoria_clicada}**."
+    st.caption(legenda_tabela)
+    tabela = df_tabela.sort_values("data", ascending=False).reset_index(drop=True)
     evento_tabela = st.dataframe(
         tabela,
         use_container_width=True,
@@ -113,6 +125,7 @@ with bloco_saldo:
 
 with bloco_categoria:
     st.markdown("### 📂 Distribuição por Categoria")
+    st.caption("Clique numa barra para filtrar a tabela detalhada por essa categoria. Clique novamente para limpar.")
     if descricao_selecionada:
         st.caption(f"🔎 Filtrado pela descrição selecionada: **{descricao_selecionada}**")
     resumo_cat = df_grafico.groupby("categoria")["valor"].sum().reset_index().sort_values(by="valor", ascending=False)
@@ -128,4 +141,10 @@ with bloco_categoria:
         color_discrete_map="identity"
     )
     fig_bar.update_layout(showlegend=False)
-    st.plotly_chart(fig_bar, use_container_width=True)
+    st.plotly_chart(
+        fig_bar,
+        use_container_width=True,
+        key="grafico_categoria",
+        on_select="rerun",
+        selection_mode="points",
+    )

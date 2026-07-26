@@ -19,6 +19,7 @@ def carregar_dados(path):
     df = pd.read_excel(path, engine="openpyxl")
     df["data"] = pd.to_datetime(df["data"], errors="coerce")
     df["ano_mes"] = df["data"].dt.to_period("M").astype(str)
+    df["ano"] = df["data"].dt.year
     return df
 
 # ===============================
@@ -43,12 +44,25 @@ else:
 # FILTROS
 # ===============================
 st.sidebar.header("🎛 Filtros")
-categorias = st.sidebar.multiselect("Filtrar por categoria", df["categoria"].dropna().unique(), default=df["categoria"].dropna().unique())
-meses = st.sidebar.multiselect("Filtrar por mês", df["ano_mes"].dropna().unique(), default=df["ano_mes"].dropna().unique())
 
+def multiselect_com_todos(label, opcoes):
+    opcoes_ordenadas = sorted(opcoes)
+    selecionadas = st.sidebar.multiselect(label, ["TODOS"] + opcoes_ordenadas, default=["TODOS"])
+    if "TODOS" in selecionadas:
+        return opcoes_ordenadas
+    return selecionadas
+
+categorias = multiselect_com_todos("Filtrar por categoria", df["categoria"].dropna().unique().tolist())
+anos = multiselect_com_todos("Filtrar por ano", df["ano"].dropna().astype(int).unique().tolist())
+meses = multiselect_com_todos("Filtrar por mês", df["ano_mes"].dropna().unique().tolist())
 bancos = st.sidebar.multiselect("Filtrar por banco", df["banco"].dropna().unique(), default=df["banco"].dropna().unique())
-df_filtros = df[df["categoria"].isin(categorias) & df["ano_mes"].isin(meses) & df["banco"].isin(bancos)]
 
+df_filtros = df[
+    df["categoria"].isin(categorias)
+    & df["ano"].isin(anos)
+    & df["ano_mes"].isin(meses)
+    & df["banco"].isin(bancos)
+]
 
 # ===============================
 # MÉTRICAS
@@ -58,31 +72,60 @@ col1.metric("💰 Total Recebido", f'R$ {df_filtros[df_filtros["valor"] > 0]["va
 col2.metric("💸 Total Gasto", f'R$ {df_filtros[df_filtros["valor"] < 0]["valor"].sum():,.2f}')
 
 # ===============================
+# LAYOUT
+# ===============================
+# Os blocos são reservados aqui na ordem visual desejada (saldo, categoria,
+# tabela), mas a tabela é processada primeiro no código para que a
+# descrição selecionada já esteja disponível ao montar os gráficos acima.
+bloco_saldo = st.container()
+bloco_categoria = st.container()
+bloco_tabela = st.container()
+
+with bloco_tabela:
+    st.markdown("### 📃 Tabela Detalhada")
+    st.caption("Clique numa linha para filtrar os gráficos acima pela mesma descrição. Clique novamente para limpar.")
+    tabela = df_filtros.sort_values("data", ascending=False).reset_index(drop=True)
+    evento_tabela = st.dataframe(
+        tabela,
+        use_container_width=True,
+        on_select="rerun",
+        selection_mode="single-row",
+    )
+
+linhas_selecionadas = evento_tabela.selection.rows
+if linhas_selecionadas:
+    descricao_selecionada = tabela.iloc[linhas_selecionadas[0]]["descricao"]
+    df_grafico = df_filtros[df_filtros["descricao"] == descricao_selecionada]
+else:
+    descricao_selecionada = None
+    df_grafico = df_filtros
+
+# ===============================
 # GRÁFICOS
 # ===============================
-st.markdown("### 📅 Evolução do Saldo por Mês")
-saldo_mes = df_filtros.groupby("ano_mes")["valor"].sum().reset_index()
-fig_linha = px.line(saldo_mes, x="ano_mes", y="valor", markers=True, title="Evolução do Saldo Mensal")
-st.plotly_chart(fig_linha, use_container_width=True)
+with bloco_saldo:
+    st.markdown("### 📅 Evolução do Saldo por Mês")
+    if descricao_selecionada:
+        st.caption(f"🔎 Filtrado pela descrição selecionada: **{descricao_selecionada}**")
+    saldo_mes = df_grafico.groupby("ano_mes")["valor"].sum().reset_index()
+    fig_linha = px.line(saldo_mes, x="ano_mes", y="valor", markers=True, title="Evolução do Saldo Mensal")
+    st.plotly_chart(fig_linha, use_container_width=True)
 
-st.markdown("### 📂 Distribuição por Categoria")
-resumo_cat = df_filtros.groupby("categoria")["valor"].sum().reset_index().sort_values(by="valor", ascending=False)
-resumo_cat["cor"] = resumo_cat["valor"].apply(lambda x: "darkblue" if x >= 0 else "lightcoral")
+with bloco_categoria:
+    st.markdown("### 📂 Distribuição por Categoria")
+    if descricao_selecionada:
+        st.caption(f"🔎 Filtrado pela descrição selecionada: **{descricao_selecionada}**")
+    resumo_cat = df_grafico.groupby("categoria")["valor"].sum().reset_index().sort_values(by="valor", ascending=False)
+    resumo_cat["cor"] = resumo_cat["valor"].apply(lambda x: "darkblue" if x >= 0 else "lightcoral")
 
-fig_bar = px.bar(
-    resumo_cat,
-    x="categoria",
-    y="valor",
-    title="Total por Categoria",
-    text_auto=True,
-    color="cor",
-    color_discrete_map="identity"
-)
-fig_bar.update_layout(showlegend=False)
-st.plotly_chart(fig_bar, use_container_width=True)
-
-# ===============================
-# TABELA
-# ===============================
-st.markdown("### 📃 Tabela Detalhada")
-st.dataframe(df_filtros.sort_values("data", ascending=False), use_container_width=True)
+    fig_bar = px.bar(
+        resumo_cat,
+        x="categoria",
+        y="valor",
+        title="Total por Categoria",
+        text_auto=True,
+        color="cor",
+        color_discrete_map="identity"
+    )
+    fig_bar.update_layout(showlegend=False)
+    st.plotly_chart(fig_bar, use_container_width=True)

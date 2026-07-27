@@ -18,7 +18,7 @@ Piter Pão;;padaria
 Amanda Davi Caetano;;presente
 Dville Santa Monica;;supermercado
 Piter Pao;;padaria
-Carreon Carnes Especia;;açougue
+Carreon Carnes Especia;;alimentacao
 Bar E Restaurante;;refeicao
 Pronto Socorro Da Sede Lanchonet;;refeicao
 Supermercado Bahamas;;supermercado
@@ -29,7 +29,6 @@ Sebastiao Vieira Da Mota;;outros
 Carioca Alimentos Pa;;alimentacao
 D'ville Supermercados S A;;supermercado
 Carreon Carnes Especiais Ltda;;alimentacao
-Carreon Carnes Especia;;alimentacao
 Bar E Restaurante;;alimentacao
 Supermercado Bahamas;;Supermercado
 Ecovias Do Cerrado;;transporte
@@ -38,7 +37,7 @@ Buteco Da Esquina;;alimentacao
 Ars Comercio De Choco;;chocolate
 Beatriz Severina Teixeira;;outros
 Sabor Mineiro;;alimentacao
-Curinga Veiculos;;manutenção
+Curinga Veiculos;;carro
 Dayane Franco;;alimentacao
 Supermercado Filho De;;Supermercado
 Posto Triangulo;;transporte
@@ -59,7 +58,7 @@ Uber;;transporte
 Carioca Alimentos;;alimentacao
 Condomínio Do Edificio Classique Residence;;condominio
 Farmácia Pague Menos;;saude
-Petz;;pets
+Petz;;pet
 Hn Sabia Hamburgueria;;alimentacao
 Ars Comercio De Chocolates;;alimentacao
 Sam's Club;;Supermercado
@@ -117,7 +116,7 @@ Tufi Duek;;presente
 Consorcio;;transporte
 Riachuelo;;vestuario
 Joao Cafes;;alimentacao
-Julio Cesar G;;pets
+Julio Cesar G;;pet
 Piter Pao;Compra no débito autorizada;alimentacao
 Bar E Restaurante;Compra no débito autorizada;alimentacao
 Pronto Socorro Da Sede Lanchonet;Pix enviado;alimentacao
@@ -139,7 +138,7 @@ Dayane Franco Rezende;Pix enviado;outros
 Lilian Tavares De Andrade;Pix enviado;outros
 Uber;Pix enviado;transporte
 Uber;Devolução de Pix recebida;transporte
-Petz;Pix enviado;pets
+Petz;Pix enviado;pet
 Drogaria Santana;Compra no débito autorizada;saude
 Claudio Candido Fernandes;Pix enviado;outros
 Rogerio Pereira Martins 09171023631;Pix enviado;outros
@@ -217,7 +216,7 @@ TELEFONICA BRASIL S A ;PIX;telefonia
 SUPERMERCADO 2000 LTDA;PIX;supermercado
 Walter Vaz de Araújo Júnior;PIX;emprestimo
 DARC CABELEIREIROS P V EIRELI;PIX;beleza
-PET CENTER COMERCIO E PARTICIPACOES S A;PIX;pets
+PET CENTER COMERCIO E PARTICIPACOES S A;PIX;pet
 Devolucao Pix Recebido;Devolução PIX;outros
 VANIA MARIA YAKASILO FERNANDES;PIX;faturamento
 Revestir Desapego;PIX;vestuario
@@ -298,14 +297,14 @@ benedith;compra cartao debito;alimentacao
 villa carioca;compra cartao debito;alimentacao
 atacado das castanhas;compra cartao debito;alimentacao
 BUDDHA SPA UBERLANDIA;PIX;lazer
-petz;compra cartao debito;pets
+petz;compra cartao debito;pet
 OAKBERRY SABIA;compra cartao debito;alimentacao
 ;Transferência enviada pelo Pix - Raquel Akeme Oliveira - •••.961.866-•• - NU PAGAMENTOS - IP (0260) Agência: 1 Conta: 85858652-6;baba
 PATIO SABIA LTDA;compra cartao debito;estacionamento
 DARC CABELEIREIROS P V EIRELI;compra cartao debito;beleza
 HAVAN S.A.                                                  ;PIX;casa
-Claudete Dias Pestana;PIX;pets
-;Pagamento de fatura;cartão de crédito
+Claudete Dias Pestana;PIX;pet
+;Pagamento de fatura;cartao de credito
 pague menos;compra cartao debito;saude
 Havan;Compra no débito autorizada;casa
 Oliveira Oliveira Comercio Infantil Ltda.;Pix enviado;vestuario
@@ -343,7 +342,7 @@ Duster Park Estacionamento;Compra no débito autorizada;estacionamento
 Lojas Riachuelo;Pix enviado;vestuario
 Pix Marketplace;Pix enviado;casa
 Decathlon;Compra no débito autorizada;lazer
-Petz;Compra no débito autorizada;pets
+Petz;Compra no débito autorizada;pet
 Profissional Park Esta;Compra no débito autorizada;estacionamento
 Laracakes;Pix enviado;alimentacao
 Larissa Santos Pinheiro Alcantara Angelo;Pix enviado;alimentacao
@@ -378,13 +377,13 @@ supermercado;supermercado;supermercado
 Melicegenes Ribeiro Ambrosio;Transferência enviada;saude
 Imobiliária Uniao;Transferência enviada;aluguel
 LUIZ ANTONIO MEIRELES VASCONCELOS;PIX;faturamento
-EXPOCACER - 71.352.553/0001-51 - BCO SAFRA S.A. (0422) Agência: 131 Conta: 3866-7;Transferência enviada pelo Pix;alimentação
+EXPOCACER - 71.352.553/0001-51 - BCO SAFRA S.A. (0422) Agência: 131 Conta: 3866-7;Transferência enviada pelo Pix;alimentacao
 MUNICIPIO DE UBERLANDIA - 18.431.312/0017-82 - BCO DO BRASIL S.A. (0001) Agência: 2918 Conta: 103102-3;Transferência enviada pelo Pix;impostos
-Lucas de Castro Teixeira - •••.611.666-•• - NU PAGAMENTOS - IP (0260) Agência: 1 Conta: 6384342-9;Transferência enviada pelo Pix;alimentação
-José Rubens de Souza (Transferência enviada);Transferência enviada pelo Pix;alimentação
+Lucas de Castro Teixeira - •••.611.666-•• - NU PAGAMENTOS - IP (0260) Agência: 1 Conta: 6384342-9;Transferência enviada pelo Pix;alimentacao
+José Rubens de Souza (Transferência enviada);Transferência enviada pelo Pix;alimentacao
 CEMIG DISTRIBUICAO S.A - 06.981.180/0001-16 - BCO SANTANDER (BRASIL) S.A. (0033) Agência: 3337 Conta: 13065587-1;Transferência enviada pelo Pix;energia
 LAVANDERIA LAVA E PASSA QUEIROZ LTDA - 00.699.078/0001-46 - BCO DO BRASIL S.A. (0001) Agência: 274 Conta: 49918-8;Transferência enviada pelo Pix;casa
-PAPELARIA RISQUE & RABISQUE LTDA - 02.363.611/0001-20 - BCO DO BRASIL S.A. (0001) Agência: 274 Conta: 6225-1;Transferência enviada pelo Pix;educação
+PAPELARIA RISQUE & RABISQUE LTDA - 02.363.611/0001-20 - BCO DO BRASIL S.A. (0001) Agência: 274 Conta: 6225-1;Transferência enviada pelo Pix;educacao
 FATTE CASA LTDA (Transferência enviada);Transferência enviada pelo Pix;casa
 RECEITA FEDERAL - 00.394.460/0058-87 - ITAÚ UNIBANCO S.A. (0341) Agência: 332 Conta: 81010-0;Transferência enviada pelo Pix;impostos
 ANNE MARCHI (Transferência enviada);Transferência enviada pelo Pix;baba
@@ -397,4 +396,160 @@ PEROLA APARECIDA CASTRO ALVES - •••.521.126-•• - CAIXA ECONOMICA FEDER
 VINICIUS MALTA DE SANTANA SILVA (Transferência enviada);Transferência enviada pelo Pix;diarista
 LUIS CARLOS LUCIANO DOS SANTOS (Transferência enviada);Transferência enviada pelo Pix;esporte
 PEROLA APARECIDA CASTRO ALVES (Transferência enviada);Transferência enviada pelo Pix;beleza
-RENATA CRISTINA MACHADO FUJII (Transferência enviada);Transferência enviada pelo Pix;educação
+RENATA CRISTINA MACHADO FUJII (Transferência enviada);Transferência enviada pelo Pix;educacao
+Fatte Casa;Compra no débito autorizada;casa
+Tulio Marco Nunes;Pix enviado;entreterimento
+Filho De Minas;Compra no débito autorizada;supermercado
+45 140 433 Maynne Gomes Santos;Pix enviado;educacao
+43 713 210 Dandara Dutra Da Silva;Pix enviado;vestuario
+Papelar Papelaria;Pix enviado;educacao
+Ana Carolina Arantes Silva;Pix enviado;estacionamento
+Pet Trecos Comercio E Servico De Pet Shop;Pix enviado;pet
+Sam Uberlandia Serviço De Anestesia E Medicina Perioperatoria;Pix enviado;saude
+Municipio De Uberlandia;Pix enviado;estacionamento
+Telefonica Bras;Pix enviado;telefonia
+Aqua Natacao;Pix enviado;esporte
+Bahamas 0000 M;Compra no débito autorizada;supermercado
+Cobasi;Compra no débito autorizada;pet
+2t Estacionamento;Compra no débito não autorizada;estacionamento
+Simone Malta De Santana Silva;Pix enviado;diarista
+Uniao Negocios;Pix enviado;despesa de viagem
+Maicon Malta De Santana Silva;Pix enviado;diarista
+Fatte Casa Ltda;Pix enviado;casa
+Villefort;Compra no débito autorizada;supermercado
+Uniao Negocios;Pix enviado;aluguel
+Anne Marchi;Pix enviado;baba
+Imobiliária Uniao;Pix enviado;aluguel
+Vinicius Malta De Santana Silva;Pix enviado;diarista
+Abadia Peres De Araujo Silva;Pix enviado;presente
+Pagarme Pagamentos SA;PIX;telefonia
+DROGARIA E PERFUMARIA MUITO MAIS LTDA;PIX;saude
+SUPERMERCADOS BH COMERCIO DE ALIMENTOS S/A;PIX;supermercado
+PATROCINIO PETROLEO E PECAS LTDA;PIX;combustivel
+EXPRESSO UNIAO LTDA;PIX;despesa de viagem
+MAICON MALTA DE SANTANA SILVA;PIX;diarista
+ANNE MARCHI;PIX;baba
+CEBOLA TENNIS SHOP;PIX;esporte
+MOBIFACIL SERVICOS, TECNOLOGIA E PARTICIPACOES LTDA;PIX;despesa de viagem
+VINICIUS MALTA DE SANTANA SILVA;PIX;diarista
+ABADIA PERES DE ARAUJO SILVA;PIX;presente
+SISCOB SERVICOS E CONSULTORIA LTDA;PIX;faturamento
+PEROLA CASTRO;Compra no débito;beleza
+VILLEFORT;Compra no débito;supermercado
+DROGARIAS PACHECO;Compra no débito;saude
+Drogalider;Compra no débito;saude
+SUPER RODA VIVA;Compra no débito;supermercado
+DROGASIL3958;Compra no débito;saude
+VillaDoce;Compra no débito;casa
+Araujo Loja;Compra no débito;saude
+BAHAMAS     0000     M;Compra no débito;supermercado
+EXPRESSO UNIAO;Compra no débito;despesa de viagem
+Nellacasa;Compra no débito;casa
+Entrevias Concessionar;Compra no débito;despesa de viagem
+Netflix Entretenimento;Compra no débito;entreterimento
+5 A SEC;Compra no débito;lavanderia
+C PERNAMBUCANAS LJ 551;Compra no débito;vestuario
+NETFLIX ENTRETENIMENTO;Compra no débito;entreterimento
+CROCS;Compra no débito;vestuario
+DROGASIL1471;Compra no débito;saude
+PONTO DA LIMPEZA;Compra no débito;casa
+SUPER SHOPPING DA UTIL;Compra no débito;casa
+KEILA KIDS;Compra no débito;presente
+DROGASIL3193;Compra no débito;saude
+SAMS CLUB UBERLANDIA;Compra no débito;supermercado
+PURINA PET SHOP;Compra no débito;pet
+PET SHOPPING PATROCINI;Compra no débito;pet
+GAMELA ESPACO CASA;Compra no débito;casa
+CRESCI E PERDI;Compra no débito;vesturario
+DROGASIL1219;Compra no débito;saude
+VillaDoce;Compra no débito;presente
+MARRA MERCATO;Compra no débito;supermercado
+JAGUARA COMB LTDA EPP;Compra no débito;combustivel
+UP ESTETICA;Compra no débito;beleza
+PEROLA CASTRO;Compra no débito;saude
+RISQUE & RABISQUE;Compra no débito;educacao
+CAPPTA *JM FESTA LTDA;Compra no débito;casa
+JM FESTA LTDA;Compra no débito;casa
+JIM.COM* FRATELLI MODA;Compra no débito;casa
+SAN DIEGO;Compra no débito;despesa de viagem
+PCA PARABRISAS;Compra no débito;carro
+SACOLA CHEIA;Compra no débito;supermercado
+TOYS MANIA;Compra no débito;presente
+VILLA BEBE;Compra no débito;vestuario
+CLAeNICA LMPLANTAR;Compra no débito;beleza
+UP ESTETICA - 21.367.558/0001-80 - BCO DO BRASIL S.A. (0001) Agência: 274 Conta: 56308-0;Transferência enviada pelo Pix;beleza
+UNIAO BOA ESPERANCA;Compra no débito;despesa de viagem
+Buteco Da Esquina;Compra no débito autorizada;alimentacao
+Disk Cerveja Do Renati;Compra no débito autorizada;alimentacao
+Ideal Papelaria;Compra no débito autorizada;educacao
+Insomnia Café & Lounge;Compra no débito autorizada;alimentacao
+Albino E Bersanetti Foods Ltda;Pix enviado;alimentacao
+Kiko Cosméticos;Compra no débito autorizada;beleza
+Johann Rodrigues Hruska;Pix enviado;saude
+C E A;Pix enviado;vestuario
+Drogavet;Pix enviado;pet
+Jamaica Restaurante Steakhouse;Pix enviado;alimentacao
+Bull Prime Casa De Car;Compra no débito autorizada;alimentacao
+Vitor Guimaraes Lage;Pix enviado;alimentacao
+Integra Fisioterapia E Saúde;Pix enviado;saude
+Casa Maresia Padel;Pix enviado;esporte
+Yelum Seguradora;Pix enviado;carro
+Comercial Borges Ltda;Pix enviado;alimentacao
+ESTHER MOREIRA VASCONCELOS;PIX;faturamento
+ROTISSERIA OTOMURA LTDA                                     ;PIX;alimentacao
+EMPORIO ANTARES LTDA;PIX;alimentacao
+ORIZON GRILL LTDA                                           ;PIX;alimentacao
+KEILA CARDOSO PEREIRA 88108                                 ;PIX;beleza
+PAGAR.ME INSTITUICAO DE PAGAMENTO S.A;PIX;telefonia
+Pagar Me Instituicao De Pagamento S/a;PIX;telefonia
+CHURRASCARIA PIM GRILL LTDA;PIX;alimentacao
+VCEDU SERVICOS TECNOLOGICOS LTDA;PIX;faturamento
+VIDAL & SIMAMOTO SPORTS LTDA;PIX;alimentacao
+LG PARKING LTDA;PIX;estacionamento
+GASTRONOMIA AC LTDA;PIX;alimentacao
+JAMAICA RESTAURANTE & STEAKHOUSE;PIX;alimentacao
+BARBEARIA REQUINTE PREMIUM LTDA;PIX;beleza
+CEMA CENTRAL MINEIRA ATACADISTA LTDA;PIX;alimentacao
+HONORATO PIZZARIA;PIX;alimentacao
+A  F SPECIALTY COFFEE LTDA;PIX;alimentacao
+YELUM SEGUROS S.A.;PIX;carro
+RIZZO PARKING AND MOBILITY S/A;PIX;estacionamento
+CARDOSO PNEUS LTDA;PIX;carro
+PALUMINO GRILL LTDA;PIX;alimentacao
+VIVO MG - TELEMIG;Pagamento;telefonia
+SANTANDER SOCIEDADE DE CREDITO  FINANCIA;Pagamento;carro
+AB PANIFICADORA E COMERCIO LTDA;PIX;alimentacao
+MOVA EXPRESS HOTEL LTDA;PIX;despesa de viagem
+RODOSNACK CORAL LANCHONETE E RESTAURANTE LTDA;PIX;alimentacao
+FIORELLA FASHION LTDA;PIX;beleza
+UNIFARMA;PIX;saude
+EXPRESSO UNIAO LTDA - 19.350.180/0001-60 - BCO SANTANDER (BRASIL) S.A. (0033) Agência: 2271 Conta: 13004145-0;Transferência enviada pelo Pix;despesa de viagem
+EXPOCACCER;Compra no débito;alimentacao
+NETFLIX.COM;Compra no débito;entreterimento
+MR FRITZ CENTER SHOPPI;Compra no débito;alimentacao
+LOJA DOCE;Compra no débito;alimentacao
+IDEAL PAPELARIA;Compra no débito;educacao
+PiterPaoLtda;Compra no débito;alimentacao
+BAR DO BETAO;Compra no débito;alimentacao
+ACAI SABIA;Compra no débito;alimentacao
+RIACHUELO UBERLANDIA C;Compra no débito;vestuario
+ARAUJO PADARIA E PIZZA;Compra no débito;alimentacao
+CATIGUA TENIS CLUBE;Compra no débito;lazer
+LAVANDERIA LAVA E PASSA QUEIROZ LTDA - 00.699.078/0001-46 - BCO DO BRASIL S.A. (0001) Agência: 274 Conta: 49918-8;Transferência enviada pelo Pix;lavanderia
+GAMELA ESPACO CASA;Compra no débito;lazer
+SMP PRODUTOS ALIMENTIC;Compra no débito;alimentacao
+BUTECO DA ESQUINA;Compra no débito;alimentacao
+HAVAN UBERLANDIA;Compra no débito;casa
+FELLIPE AUGUSTO BRITO;Compra no débito;alimentacao
+PONTO NATURAL;Compra no débito;alimentacao
+DULCE PERES NUNES (Transferência enviada);Transferência enviada pelo Pix;priscila
+VOGA BEAUTY STUDIO - P;Compra no débito;beleza
+FSM COMERCIO E SERVICO;Compra no débito;alimentacao
+TOP CARNES PATROCINI;Compra no débito;alimentacao
+Pauliana Cristina Verona Hubaide - •••.789.256-•• - NU PAGAMENTOS - IP (0260) Agência: 1 Conta: 73405563-9;Transferência enviada pelo Pix;alimentacao
+Pagar Me Pagamentos - 18.727.053/0001-74 - STONE IP S.A. (0197) Agência: 1 Conta: 16714636-4;Transferência enviada pelo Pix;telefonia
+PASTELARIA MARIANA;Compra no débito;alimentacao
+SANTANDER SOCIEDADE DE CREDITO  FINANCIA;Pagamento de boleto efetuado;carro
+PAGAR.ME PAGAMENTOS - 18.727.053/0001-74 - STONE IP S.A. (0197) Agência: 1 Conta: 16714636-4;Transferência enviada pelo Pix;telefonia
+JOSILAINE DA SILVA (Transferência enviada);Transferência enviada pelo Pix;baba
+RODRIGO FERREIRA DE SOUZA (Transferência enviada);Transferência enviada pelo Pix;alimentacao

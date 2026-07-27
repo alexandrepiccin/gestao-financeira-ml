@@ -81,6 +81,18 @@ bloco_saldo = st.container()
 bloco_categoria = st.container()
 bloco_tabela = st.container()
 
+# Categorias com valor muito menor que os maiores totais (ex.: faturamento)
+# ficam com barras de poucos pixels no gráfico, difíceis de clicar. Por isso,
+# além do clique na barra, oferecemos uma lista de seleção equivalente — mais
+# fácil para escolher categorias de valor pequeno.
+with bloco_categoria:
+    st.markdown("### 📂 Distribuição por Categoria")
+    st.caption("Clique numa barra para filtrar a tabela detalhada por essa categoria. Segure Shift e clique para selecionar várias barras, ou use o ícone de seleção por caixa na barra de ferramentas do gráfico. Clique novamente numa barra selecionada para removê-la.")
+    categorias_lista = st.multiselect(
+        "Ou selecione categorias direto pela lista (mais fácil para barras pequenas no gráfico)",
+        options=sorted(df_filtros["categoria"].dropna().unique().tolist()),
+    )
+
 # Lê o clique mais recente no gráfico de categoria (se houver) antes de
 # montar a tabela, que é desenhada acima dele no layout.
 categorias_clicadas = []
@@ -88,17 +100,18 @@ estado_grafico_categoria = st.session_state.get("grafico_categoria")
 if estado_grafico_categoria and estado_grafico_categoria.selection.points:
     categorias_clicadas = sorted({p.get("x") for p in estado_grafico_categoria.selection.points})
 
-df_tabela = df_filtros[df_filtros["categoria"].isin(categorias_clicadas)] if categorias_clicadas else df_filtros
+categorias_selecionadas = sorted(set(categorias_clicadas) | set(categorias_lista))
+df_tabela = df_filtros[df_filtros["categoria"].isin(categorias_selecionadas)] if categorias_selecionadas else df_filtros
 
 with bloco_tabela:
     st.markdown("### 📃 Tabela Detalhada")
     legenda_tabela = "Clique numa linha para filtrar os gráficos acima pela mesma descrição. Clique novamente para limpar."
-    if categorias_clicadas:
+    if categorias_selecionadas:
         legenda_tabela += (
-            f" Filtrado pelas categorias selecionadas no gráfico: **{', '.join(categorias_clicadas)}**."
+            f" Filtrado pelas categorias selecionadas: **{', '.join(categorias_selecionadas)}**."
         )
     st.caption(legenda_tabela)
-    if categorias_clicadas:
+    if categorias_selecionadas:
         st.metric("💰 Soma das categorias selecionadas", f'R$ {df_tabela["valor"].sum():,.2f}')
     tabela = df_tabela.sort_values("data", ascending=False).reset_index(drop=True)
     evento_tabela = st.dataframe(
@@ -128,8 +141,6 @@ with bloco_saldo:
     st.plotly_chart(fig_linha, use_container_width=True)
 
 with bloco_categoria:
-    st.markdown("### 📂 Distribuição por Categoria")
-    st.caption("Clique numa barra para filtrar a tabela detalhada por essa categoria. Segure Shift e clique para selecionar várias barras, ou use o ícone de seleção por caixa na barra de ferramentas do gráfico. Clique novamente numa barra selecionada para removê-la.")
     if descricao_selecionada:
         st.caption(f"🔎 Filtrado pela descrição selecionada: **{descricao_selecionada}**")
     resumo_cat = df_grafico.groupby("categoria")["valor"].sum().reset_index().sort_values(by="valor", ascending=False)

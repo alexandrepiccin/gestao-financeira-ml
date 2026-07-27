@@ -83,19 +83,23 @@ bloco_tabela = st.container()
 
 # Lê o clique mais recente no gráfico de categoria (se houver) antes de
 # montar a tabela, que é desenhada acima dele no layout.
-categoria_clicada = None
+categorias_clicadas = []
 estado_grafico_categoria = st.session_state.get("grafico_categoria")
 if estado_grafico_categoria and estado_grafico_categoria.selection.points:
-    categoria_clicada = estado_grafico_categoria.selection.points[0].get("x")
+    categorias_clicadas = sorted({p.get("x") for p in estado_grafico_categoria.selection.points})
 
-df_tabela = df_filtros[df_filtros["categoria"] == categoria_clicada] if categoria_clicada else df_filtros
+df_tabela = df_filtros[df_filtros["categoria"].isin(categorias_clicadas)] if categorias_clicadas else df_filtros
 
 with bloco_tabela:
     st.markdown("### 📃 Tabela Detalhada")
     legenda_tabela = "Clique numa linha para filtrar os gráficos acima pela mesma descrição. Clique novamente para limpar."
-    if categoria_clicada:
-        legenda_tabela += f" Filtrado pela categoria selecionada no gráfico: **{categoria_clicada}**."
+    if categorias_clicadas:
+        legenda_tabela += (
+            f" Filtrado pelas categorias selecionadas no gráfico: **{', '.join(categorias_clicadas)}**."
+        )
     st.caption(legenda_tabela)
+    if categorias_clicadas:
+        st.metric("💰 Soma das categorias selecionadas", f'R$ {df_tabela["valor"].sum():,.2f}')
     tabela = df_tabela.sort_values("data", ascending=False).reset_index(drop=True)
     evento_tabela = st.dataframe(
         tabela,
@@ -125,7 +129,7 @@ with bloco_saldo:
 
 with bloco_categoria:
     st.markdown("### 📂 Distribuição por Categoria")
-    st.caption("Clique numa barra para filtrar a tabela detalhada por essa categoria. Clique novamente para limpar.")
+    st.caption("Clique numa barra para filtrar a tabela detalhada por essa categoria. Segure Shift e clique para selecionar várias barras, ou use o ícone de seleção por caixa na barra de ferramentas do gráfico. Clique novamente numa barra selecionada para removê-la.")
     if descricao_selecionada:
         st.caption(f"🔎 Filtrado pela descrição selecionada: **{descricao_selecionada}**")
     resumo_cat = df_grafico.groupby("categoria")["valor"].sum().reset_index().sort_values(by="valor", ascending=False)
@@ -146,5 +150,5 @@ with bloco_categoria:
         use_container_width=True,
         key="grafico_categoria",
         on_select="rerun",
-        selection_mode="points",
+        selection_mode=["points", "box"],
     )
